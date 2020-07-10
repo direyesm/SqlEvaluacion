@@ -79,7 +79,7 @@ create tabla pelicula(
   id_pelicula int,
   Titulo varchar(25),
   Genero varchar(20),
-  subtitulo integer, -- id_subt
+  subtitulo integer, -- id_iidioma
   pais_origen varchar(25),
   anio_producc date,
   url varchar(50),
@@ -91,19 +91,20 @@ create tabla pelicula(
   reparto varchar(150),
   actor varchar (50),
   personaje varchar (25)
+  primary key (id_pelicula)
 )
 
 create table director(
-  nombre varchar(50) pk,
+  nombre varchar(50),
   nacionalidad varchar(25),
   cantidad_peli varchar(25),
-  actuacion varchar(25)
+  actuacion varchar(25),
+  primary key (nombre)
 )
 create table cine(
   fk_id_sala integer,
   cartelera varchar(25),
   detalle_peli varchar(25),
-
 )
 
 create table sala(
@@ -113,14 +114,10 @@ create table sala(
 
 create table idioma(
   id_idioma integer,
-  español integer,
-  ingles  integer,
-  subtitulo integer
+  tipo varchar(20)
 )
 
 create table  calificacion(
   id_califi integer,
-  tipo_9 varchar(10),
-  tipo_15 varchar(10),
-  tipo_18 varchar(10)
+  tipo varchar(20)
 )
